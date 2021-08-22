@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(to bottom, pink,purple );
+    padding: 100px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  #card, #card-front, #card-inside {
+    height: 500px;
+  }
+  
+  .wrap {
+      padding: 1.5em 2.5em;
+      height: 100%;
+  }
+  
+  #card-front, #card-inside {
+    width: 47%;
+    position: absolute;
+    left: 40%;
+  }
+  #card-inside .wrap {
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  }
+  #card {
+      max-width: 960px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      position: relative;
+  }
+  #card h1 {
+      text-align: center;
+      font-style: italic;
+      font-size: 70px;
+      color: white;
+  }
+  #card-inside {
+      font-size: 24;
+      line-height: 1.4;
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace
+      color: black;
+  }
+  #card-front {
+      background-color: orange;
+              transform-origin: left;
+         -moz-transform-origin: left;
+      -webkit-transform-origin: left;
+              transition:transform 1s linear;
+         -moz-transition:-moz-transform 1s linear;
+      -webkit-transition:-webkit-transform 1s linear;
+      position: relative;
+  }
+  
+  #card-front button {
+    position: absolute;
+    bottom: 1em;
+    right: -12px;
+    background: #F44;
+    color: #FFF;
+    font-size: 1.5em;
+    padding: .5em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #card-front button:hover,
+  #card-front button:focus {
+    background: #F22;
+  }
+  
+  #close {
+    display: none;
+  }
+  
+  #card.open-fully #close,
+  #card-open-half #close {
+    display: inline;
+  }
+  
+  #card.open-fully #open {
+    display: none;
+  }
+  
+  
+  #card.open-half #card-front,
+  #card.close-half #card-front {
+      transform: rotateY(-90deg);
+  }
+  
+  #card.open-fully #card-front {
+      transform: rotateY(-180deg);
+  }

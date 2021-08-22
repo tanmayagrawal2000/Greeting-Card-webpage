@@ -1,0 +1,63 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div id="card">
+      <div id="card-inside">
+        <div class="wrap">
+          <p align="center"><b>Erika Luann</b><br>
+  and<br>
+    <b>Luke Vincent Dyer</b><br><br>            
+  Joyfully invite you to share in their happiness
+  as they unite in marriage.
+  on Saturday, February 12, 2019
+  at 4 o’clock in the afternoon
+  Crescent Ranch
+  Mt. Vernon, Washington
+  Post ceremony immediately to follow
+          </p>
+        </div>
+      </div>
+      <div id="card-front">
+        <div class="wrap">
+          <h1>Wedding Invitation
+          </h1>
+        </div>
+        <button id="open">&gt;</button>
+        <button id="close">&lt;</button>
+      </div>
+    </div>
+    <script>
+    (function() {
+    function $(id) {
+      return document.getElementById(id);
+    }
+  
+    var card = $('card'),
+        openB = $('open'),
+        closeB = $('close'),
+        timer = null;
+    console.log('wat', card);
+    openB.addEventListener('click', function () {
+      card.setAttribute('class', 'open-half');
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(function () {
+        card.setAttribute('class', 'open-fully');
+        timer = null;
+      }, 1000);
+    });
+  
+    closeB.addEventListener('click', function () {
+      card.setAttribute('class', 'close-half');
+      if (timer) clearTimerout(timer);
+      timer = setTimeout(function () {
+        card.setAttribute('class', '');
+        timer = null;
+      }, 1000);
+    });
+  
+  }());
+    </script>
+    </body>
+</html>
